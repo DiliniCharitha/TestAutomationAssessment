@@ -7,7 +7,7 @@ When user make a request to the URL
 Then the user get an OK response
 And check the response exists with Name as "<name>"
 And CanRelist as <CanRelist> 
-And Promotion Name as "<PromotionName>" and Description should be as "<promotion>"
+And Promotion Name as "<PromotionName>" with Description should be as "<promotion>"
   
 Examples:
 

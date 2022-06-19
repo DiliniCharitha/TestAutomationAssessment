@@ -62,8 +62,8 @@ public class TestStepDefinitions {
     	assertEquals(output, input);
     }
     
-    @And("Promotion Name as {string} and Description should be as {string}")
-    public void Promotion_Name_as_description_should_be_as(String inputPromotionName, String inputDescription)
+    @And("Promotion Name as {string} with Description should be as {string}")
+    public void Promotion_Name_as_with_description_should_be_as(String inputPromotionName, String inputDescription)
     {
     	List<Promotions> promotions =   getValuesAsList(Const.RESPONSE_JSON_KEY_PROMOTION, Promotions.class);
 		assertNotEquals(errorMessage(Const.RESPONSE_JSON_KEY_PROMOTION), promotions.size(), 0);
