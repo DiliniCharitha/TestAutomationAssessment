@@ -37,7 +37,7 @@ public class TestStepDefinitions {
     {
     	RestAssured.baseURI = Const.BASE_URL;
     	validatableResponse = given().contentType(ContentType.JSON).when().get(Const.ENDPOINT).then();  
-    	System.out.println(validatableResponse.extract().asPrettyString());
+    	//System.out.println(validatableResponse.extract().asPrettyString());
     }
     
     
