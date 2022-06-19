@@ -29,20 +29,22 @@ public class TestStepDefinitions {
     private Properties properties;
     
     public TestStepDefinitions() {
-    	properties = PropertyLoader.PropertyLoader();
+    	properties = PropertyLoader.getPropertyLoader();
 	}
 
-    @When("user make a request to the URL")
+    @When("a user makes a request to the URL")
     public void sendRequest()
     {
-    	RestAssured.baseURI = Const.BASE_URL;
-    	validatableResponse = given().contentType(ContentType.JSON).when().get(Const.ENDPOINT).then();  
+    	RestAssured.baseURI = properties.getProperty("config.base.uri");
+    	String endPoint = properties.getProperty("config.endpoint");
+    	
+    	validatableResponse = given().contentType(ContentType.JSON).when().get(endPoint).then();  
     	//System.out.println(validatableResponse.extract().asPrettyString());
     }
     
     
-    @Then("the user get an OK response")
-    public void the_user_get_an_OK_response()
+    @Then("the user gets an OK response")
+    public void the_user_gets_an_OK_response()
     {
     	validatableResponse.assertThat().statusCode(Const.STATUS);
     	jsonPath = validatableResponse.extract().jsonPath();

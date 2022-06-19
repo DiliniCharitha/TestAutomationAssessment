@@ -6,9 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+
 public class PropertyLoader {
 
-	public static Properties PropertyLoader() 
+	public static Properties getPropertyLoader() 
 	{
 		Properties properties = new Properties();
 		BufferedReader reader;
@@ -23,7 +24,7 @@ public class PropertyLoader {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
+			throw new RuntimeException("cucumber.properties not found at " + propertyFilePath);
 		}
 		return properties;
 	}

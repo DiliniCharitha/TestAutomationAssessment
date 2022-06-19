@@ -12,6 +12,7 @@
 * Open PoweShell
 * Navigate to TestAutomationAssessment folder which has been cloned by git.
 * Run the command: mvn test
+* After run,find the report URL at the bottom of command line and run it in the browser
 
 
 #####  From Eclipse
@@ -19,6 +20,8 @@
 * Import the project to eclipse as 'existing maven projects'
 * Go to /TestAutomationAssessment/src/test/java/com/api/assesment/runner/CucumberRunnerTest.java
 * Right click and run as Junit Test
+* After run,find the report URL at the bottom of command line and run it in the browser
+
 
 
 
