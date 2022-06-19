@@ -32,7 +32,7 @@ public class TestStepDefinitions {
     	properties = PropertyLoader.PropertyLoader();
 	}
 
-    @When("user make a request to the URL to retrieve product details")
+    @When("user make a request to the URL")
     public void sendRequest()
     {
     	RestAssured.baseURI = Const.BASE_URL;
@@ -42,7 +42,7 @@ public class TestStepDefinitions {
     
     
     @Then("the user get an OK response")
-    public void getResponse()
+    public void the_user_get_an_OK_response()
     {
     	validatableResponse.assertThat().statusCode(Const.STATUS);
     	jsonPath = validatableResponse.extract().jsonPath();
